@@ -36,7 +36,9 @@ vim.api.nvim_set_keymap('i', 'jj', '<ESC>', {noremap = true, silent = true})
 
 -- Tab switch buffer
 vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-l>', ':bnext<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-h>', ':bprevious<CR>', {noremap = true, silent = true})
 
 -- Move selected line / block of text in visual mode
 vim.api.nvim_set_keymap('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true, silent = true})
@@ -77,3 +79,24 @@ vim.cmd('vnoremap P "0P')
 
 -- Toggle the QuickFix window
 vim.api.nvim_set_keymap('', '<C-q>', ':call QuickFixToggle()<CR>', {noremap = true, silent = true})
+
+-- Redo since 'u' undos
+vim.api.nvim_set_keymap('n', 'U', ':redo<CR>', {noremap = true, silent = true})
+
+-- Next, keep search matches in the middle of the window
+vim.api.nvim_set_keymap('n', 'n', 'nzzzv', {noremap = true, silent = true})
+
+-- Backspace: Toggle search highlight
+vim.api.nvim_set_keymap('n', '<bs>', ':set hlsearch! hlsearch?<cr>', {noremap = true, silent = true})
+
+-- Use mapleader to save file
+vim.api.nvim_set_keymap('n', '<Leader> w', ':w<cr>', {noremap = true, silent = true})
+
+-- Lets use qwerty
+vim.api.nvim_set_keymap('n', ';', ':', {noremap = true, silent = true})
+
+-- Move cursor in insert mode
+vim.api.nvim_set_keymap('i', '<c-l>', '<Right>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<c-h>', '<Left>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<c-k>', '<Up>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', '<c-j>', '<Down>', {noremap = true, silent = true})
