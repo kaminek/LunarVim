@@ -414,6 +414,9 @@ return require("packer").startup(function(use)
         disable = not O.plugin.dap_install.active
     }
 
+    -- Tmux navigator
+    use {"christoomey/vim-tmux-navigator"}
+
     -- LANGUAGE SPECIFIC GOES HERE
 
     -- Latex TODO what filetypes should this be active for?
